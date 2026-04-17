@@ -17,13 +17,18 @@ body {
     padding: 40px;
 }
 
-/*paragraph center */
-.center {
+/* center on page */
+.page-center{
     display: flex;
     justify-content: center;
 }
 
-/* IMÁGENES */
+/* paragraph center */
+.center {
+    text-align: center;
+}
+
+/* IMAGES */
 img {
     width: 100%;
     max-width: 500px;
@@ -38,9 +43,138 @@ nav ul {
     margin-bottom: 40px;
 }
 
-nav a {
+.navigation {
     color: #fff;
     text-decoration: none;
+}
+
+/* === a === */
+a {
+    text-decoration: none;
+    color: #03D8F3;
+    transition: 0.7s
+}
+
+a:visited {
+    color: #FF00FF;
+}
+
+a:hover {
+    color: #bd00ff;
+    text-decoration: underline dotted #54C1E6;
+}
+
+/* FORM */
+form {
+    background: #0a0a0f;
+    border: 1px solid #00f7ff;
+    box-shadow: 0 0 10px #00f7ff, 0 0 20px #ff00ff inset;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+}
+
+/* === BUTTON === */
+button {
+    background: linear-gradient(45deg, #ff00ff, #00f7ff);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #00f7ff;
+    transform: scale(1.05);
+}
+
+/* INPUT CLICK */
+input,
+textarea {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    border: none;
+    caret-color: #00f7ff;
+}
+
+input:focus,
+textarea:focus {
+    animation: pulse 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0px #00f7ff;
+    }
+
+    50% {
+        box-shadow: 0 0 15px #00f7ff, 0 0 30px #ff00ff;
+    }
+
+    100% {
+        box-shadow: 0 0 8px #00f7ff;
+    }
+}
+
+/* ======To write (PARTICLES) =====*/
+.particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    filter: blur(1px);
+    box-shadow: 0 0 10px currentColor;
+    animation: explode 0.6s ease-out forwards;
+}
+
+/* AQUÍ ESTÁ EL CÓDIGO CORREGIDO PARA QUE LA ANIMACIÓN EXPLODE FUNCIONE */
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3) translateY(-10px);
+        opacity: 0;
+    }
+}
+
+/* Shake on page */
+.glitch-shake {
+    animation: shake 0.1s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(2px, -2px);
+        filter: hue-rotate(90deg);
+    }
+
+    50% {
+        transform: translate(-2px, 2px);
+    }
+
+    75% {
+        transform: translate(1px, -1px);
+        filter: contrast(150%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 /* ===== GLITCH H1 ===== */
@@ -59,7 +193,7 @@ nav a {
     width: 100%;
 }
 
-/* rojo */
+
 .glitch::before {
     color: #ff00c1;
     left: 2px;
@@ -67,7 +201,7 @@ nav a {
     animation: glitch-anim 2s infinite linear alternate-reverse;
 }
 
-/* cyan */
+
 .glitch::after {
     color: #00fff9;
     left: -2px;
@@ -120,11 +254,8 @@ nav a {
 
 /* ===== GLITCH H2 / H3 ===== */
 
-/* ===== ESTILOS BASE PARA H2 / H3 ===== */
-h2,
-h3 {
-    color: #fff;
-    
+h2, h3 {
+    color: #fff; 
     font-weight: bold;
 }
 
@@ -133,17 +264,16 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Tamaño más pequeño y normal para los títulos de las cartillas */
+
 h3 {
     font-size: 22px;
 }
 
-/* ===== GLITCH SOLO PARA TÍTULOS CON EL ATRIBUTO "data-glitch" ===== */
+
 h2[data-glitch],
 h3[data-glitch] {
     position: relative;
-    font-size: 40px;
-    /* Mantiene grandes los títulos de sección que tienen glitch */
+    font-size: 40px; 
     animation: an1 1s ease-in-out infinite alternate;
 }
 
@@ -172,8 +302,7 @@ h3[data-glitch]::after {
     animation: an2 0.4s infinite;
 }
 
-/* ANIMACIONES H2/H3 */
-
+/* ANIMACIONES H2/H3 */ 
 @keyframes an1 {
 
     0%,
@@ -255,26 +384,7 @@ h3[data-glitch]::after {
     transform: translateY(0);
 }
 
-/* FORM */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
-}
-
-input,
-button {
-    padding: 10px;
-    border: none;
-}
-
-button {
-    background: #00fff9;
-    cursor: pointer;
-}
-
-/* ===== GRID GENERAL (Se mantiene para otras áreas si lo usas) ===== */
+/* ===== GRID GENERAL ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -282,8 +392,7 @@ button {
     margin-top: 30px;
 }
 
-/* ===== CARDS ===== */
-
+/* ===== CARDS ===== */ 
 .card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
@@ -291,8 +400,7 @@ button {
     transition: 0.3s;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
+} 
 
 .card:hover {
     transform: translateY(-10px) scale(1.02);
@@ -300,8 +408,7 @@ button {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
-/* ===== IMÁGENES ===== */
-
+/* ===== IMÁGENES ===== */ 
 .img-card img {
     width: 100%;
     height: 180px;
@@ -309,16 +416,12 @@ button {
     background-color: rgba(255, 255, 255, 0.02);
     border-radius: 10px;
     margin-bottom: 10px;
-}
-
-/* ===== TITULOS ===== */
+} 
 
 .card h3 {
     margin-bottom: 10px;
 }
-
-/* ===== SECCIONES ===== */
-
+ 
 section {
     margin-bottom: 80px;
 }
@@ -329,21 +432,15 @@ section {
     margin: 0 auto;
     position: relative;
     z-index: 1;
-
-    animation: permanent-glitch-shadow 1.5s steps(10) infinite alternate-reverse;
-
+    animation: permanent-glitch-shadow 1.5s steps(10) infinite alternate-reverse; 
     transition: none;
-
-}
-
-
+} 
+ 
 #lyan-ph:hover {
     filter: drop-shadow(0 0 25px #00fff9) drop-shadow(0 0 40px #ff00c1);
-}
+} 
 
-
-    @keyframes permanent-glitch-shadow {
-
+@keyframes permanent-glitch-shadow {
 
     0%,
     100% {
@@ -385,23 +482,17 @@ section {
     40% {
         filter: drop-shadow(12px 12px 0 #ff00c1) drop-shadow(-12px -12px 0 #00fff9) drop-shadow(0 0 15px #fff);
     }
-}
-
-
-
+} 
 
 /* ===== REDES SOCIALES (FOLLOW ME) ===== */
-
-
-.social-links ul {
+.social-links ul { 
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
-
+ 
 .social-links a {
     text-decoration: none;
     color: #fff;
@@ -411,56 +502,46 @@ section {
     gap: 10px;
     transition: all 0.3s ease;
 }
-
-
+ 
 .social-links a:hover {
     color: #00fff9;
     text-shadow: 0 0 8px #00fff9;
     transform: translateX(10px);
 }
-
-
+ 
 .social-icon {
     width: 24px;
     height: 24px;
     object-fit: contain;
 }
-
-
+ 
 /* ========================================================== */
-/* ===== NUEVO: SCROLL INFINITO Y MODAL (NO MODIFICAR) ====== */
+/* ===== SCROLL INFINITO Y MODAL ====== */
 /* ========================================================== */
 
-/* Estructura del carrusel infinito */
-.scroll-container {
+.scroll-container { 
     width: 100%;
     overflow: hidden;
     position: relative;
     padding: 15px 0;
-    /* Espacio extra para que la sombra de tu hover no se corte */
-}
-
-/* El contenedor que agrupa todas las tarjetas de forma horizontal */
+} 
+ 
 .scroll-content {
     display: flex;
     gap: 25px;
-    width: max-content;
-    /* Permite que crezca hasta el ancho de todas las cards sumadas */
+    width: max-content; 
     will-change: transform;
 }
 
-/* Configuramos el tamaño fijo de tus cards dentro del carrusel */
-.scroll-content .card {
+.scroll-content .card { 
     flex: 0 0 320px;
-    /* Ancho fijo para cada card. Ajustalo si lo quieres más ancho o angosto */
-}
+} 
 
-/* Pausar animación cuando el usuario pone el mouse encima */
-.scroll-container:hover .scroll-content {
+.scroll-container:hover .scroll-content { 
     animation-play-state: paused !important;
 }
 
-/* 1. Animación DERECHA (Projects) */
+/* Animación DERECHA (Projects) */
 .projects-scroll .scroll-content {
     animation: scroll-right 40s linear infinite;
 }
@@ -470,13 +551,12 @@ section {
         transform: translateX(-50%);
     }
 
-    /* Empieza en el clon y se desliza al original */
-    100% {
+    100% { 
         transform: translateX(0);
     }
 }
 
-/* 2. Animación IZQUIERDA (Evidences) */
+/* Animación IZQUIERDA (Evidences) */
 .evidences-scroll .scroll-content {
     animation: scroll-left 40s linear infinite;
 }
@@ -486,19 +566,15 @@ section {
         transform: translateX(0);
     }
 
-    /* Empieza en el original y se desliza al clon */
-    100% {
+    100% { 
         transform: translateX(-50%);
     }
-}
-
+} 
 
 /* ===== IMÁGENES EXPANDIBLES Y MODAL ===== */
-
-.expandable-image {
+.expandable-image { 
     cursor: pointer;
-    /* Cambia el cursor a la "manito" */
-    transition: border-color 0.3s ease, filter 0.3s ease;
+    transition: border-color 0.3s ease, filter 0.3s ease; 
 }
 
 .expandable-image:hover {
@@ -509,15 +585,13 @@ section {
 .modal-overlay {
     display: none;
     position: fixed;
-    z-index: 9999;
-    /* Asegura que el modal siempre esté por encima de todo */
+    z-index: 9999; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
-    /* Fondo oscuro semitransparente */
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); 
     justify-content: center;
     align-items: center;
     opacity: 0;

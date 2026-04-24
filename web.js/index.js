@@ -87,6 +87,17 @@ inputs.forEach((input) => {
   });
 });
 
+// SHOW A WELCOME/CONFIRMATION MESSAGE WHEN THE FORM IS SUBMITTED
+const form = document.getElementById('login-form');
+const contactHeading = document.getElementById('contact');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  contactHeading.textContent = 'Message received! I will get back to you soon.';
+  contactHeading.style.color = '#00f7ff';
+  form.reset();
+});
+
 
 /* ========================================================== */
 /* ===== HAMBURGUER MENU ====== */

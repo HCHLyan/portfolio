@@ -21,7 +21,7 @@ A personal portfolio website built across three progressive weekly sprints, appl
 
 ## Live Demo
 
-> Open my portfolio in your browser located on my GitHub account: [Live Demo] (https://hchlyan.github.io/).  
+> Open my portfolio in your browser located on my GitHub account: [Live Demo] (https://hchlyan.github.io/)  
 
 ----------------------------------------------------------------------------------
 

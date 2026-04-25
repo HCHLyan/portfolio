@@ -1,20 +1,29 @@
+:root {
+  --color-bg: #000;
+  --color-text: #fff;
+  --color-primary: #00f7ff;
+  --color-secondary: #ff00ff;
+  --color-accent: #bd00ff;
+  --font-main: monospace;
+}
+
 body {
-  font-family: monospace;
-  color: #fff;
-  background: #000;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
   overflow-x: hidden;
   padding: 40px;
 }
 
 a {
   text-decoration: none;
-  color: #bd00ff;
+  color: var(--color-accent);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 a:hover {
   text-decoration: underline dashed;
-  color: #03d8f3;
+  color: var(--color-primary);
   transition: 0.3s ease;
 }
 
@@ -41,7 +50,7 @@ nav ul {
   padding: 15px;
   border-radius: 8px;
   text-align: center;
-  background-color: #080808;
+  background-color: var(--color-bg);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   z-index: 1;
